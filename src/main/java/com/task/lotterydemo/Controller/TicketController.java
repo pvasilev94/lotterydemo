@@ -1,8 +1,6 @@
 package com.task.lotterydemo.Controller;
 
-import com.task.lotterydemo.domain.Line;
 import com.task.lotterydemo.domain.Ticket;
-import com.task.lotterydemo.repository.TicketRespository;
 import com.task.lotterydemo.resource.TicketResource;
 import com.task.lotterydemo.resource.TicketResourceAssembler;
 import com.task.lotterydemo.service.TicketService;
@@ -12,7 +10,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
@@ -24,10 +21,10 @@ import java.util.Optional;
 public class TicketController {
 
     @Autowired
-    TicketService service;
+    private TicketService service;
 
     @Autowired
-    TicketResourceAssembler assembler;
+    private TicketResourceAssembler assembler;
 
     @RequestMapping(method = RequestMethod.GET)
     public ResponseEntity<Collection<TicketResource>> findAllOrders() {
