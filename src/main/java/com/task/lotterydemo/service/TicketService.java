@@ -26,8 +26,7 @@ public class TicketService implements TicketServiceInterface {
 
     @Override
     public Ticket createTicket(Ticket ticket) {
-        repo.create(ticket);
-        return ticket;
+        return repo.create(ticket);
     }
 
     @Override
