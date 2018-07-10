@@ -26,10 +26,12 @@ public class TicketResource extends ResourceSupport {
         return id;
     }
 
+    @JsonProperty("lines")
     public List<Line> getLinesList() {
         return lines;
     }
 
+    @JsonProperty("isChecked")
     public boolean isChecked() {
         return isChecked;
     }
