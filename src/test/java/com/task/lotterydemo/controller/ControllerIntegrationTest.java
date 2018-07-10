@@ -21,6 +21,10 @@ public class ControllerIntegrationTest {
         return mvc.perform(MockMvcRequestBuilders.get(url, urlVariables).accept(MediaType.APPLICATION_JSON));
     }
 
+    protected ResultActions post(String url, Object... urlVariables) throws Exception {
+        return mvc.perform(MockMvcRequestBuilders.post(url, urlVariables).accept(MediaType.APPLICATION_JSON));
+    }
+
     protected ResultActions post(String url, String content, Object... urlVariables) throws Exception {
         return mvc.perform(MockMvcRequestBuilders.post(url, urlVariables)
                     .accept(MediaType.APPLICATION_JSON)

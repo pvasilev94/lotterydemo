@@ -100,7 +100,7 @@ public class TicketControllerTest extends ControllerIntegrationTest {
         assertTicketSizeIs(1);
         updateTicket(ver1.getId(), ver2)
                 .andExpect(status().isOk())
-                .andExpect(updateTicketCorrect(ver1.getId(), ver2));
+                .andExpect(updateTicketCorrect(ver1.getId(), ver2   ));
     }
     @Test
     public void testUpdateTicketWithCheckedLines() throws Exception {
@@ -144,7 +144,7 @@ public class TicketControllerTest extends ControllerIntegrationTest {
         return get("/ticket");
     }
     private ResultActions checkTicket() throws Exception {
-        return get("/ticket/check");
+        return post("/ticket/check");
     }
     private void assertNoTickets() {
         assertTicketSizeIs(0);
