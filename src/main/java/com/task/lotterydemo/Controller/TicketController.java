@@ -27,7 +27,7 @@ public class TicketController {
     private TicketResourceAssembler assembler;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ResponseEntity<Collection<TicketResource>> findAllOrders() {
+    public ResponseEntity<Collection<TicketResource>> findAllTickets() {
         List<Ticket> tickets = service.findAll();
         return new ResponseEntity<>(assembler.toResourceCollection(tickets), HttpStatus.OK);
     }
