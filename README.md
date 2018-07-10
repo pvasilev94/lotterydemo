@@ -21,12 +21,12 @@ Post payload :
         },
         {
             "number_1": 1,
-            "number_2": 3,
+            "number_2": 0,
             "number_3": 2
         },
         {
             "number_1": 1,
-            "number_2": 3,
+            "number_2": 0,
             "number_3": 2
         }
     ]
