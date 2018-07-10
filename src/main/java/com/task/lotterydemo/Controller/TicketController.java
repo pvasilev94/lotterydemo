@@ -70,10 +70,15 @@ public class TicketController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
-    @RequestMapping(value = "/check", method = RequestMethod.GET)
+    @RequestMapping(value = "/check", method = RequestMethod.POST)
     public ResponseEntity<Collection<TicketResource>> runResult() {
         List<Ticket> tickets = service.runResultChecking();
-        return new ResponseEntity<>(assembler.toResourceCollection(tickets), HttpStatus.OK);
+        if (tickets != null) {
+            return new ResponseEntity<>(assembler.toResourceCollection(tickets), HttpStatus.OK);
+        }
+        else {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
     }
 }
 
